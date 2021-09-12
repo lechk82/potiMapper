@@ -13,15 +13,15 @@ Example:
 #define GAIN_MAX 1.0f
 #define OFFSET 0.0f
 
-potiMapper* poti0 = new potiMapper();
+potiMapper* poti = new potiMapper();
 
 // setup your callbacks
 
-void read_poti0(int *val){
+void read_poti(int *val){
   // read poti value
   *val = analogRead(A1);
 }
-void write_poti0(float *val){
+void write_poti(float *val){
   // write poti value, print for test
   Serial.println(*val);
 }
@@ -29,18 +29,18 @@ void write_poti0(float *val){
 void setup(){
 
   //init poti
-  poti0->init(  ADC_MIN,
+  poti->init(   ADC_MIN,
                 ADC_MAX,
                 GAIN_MIN,
                 GAIN_MAX,
                 ADC_TH,
                 OFFSET,
-                &read_poti0,
-                &write_poti0);
+                &read_poti,
+                &write_poti);
 
 }
 
 void loop(){
-  poti0->update();
+  poti->update();
 }
 ```
