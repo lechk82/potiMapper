@@ -20,6 +20,7 @@ potiMapper* poti = new potiMapper();
 void read_poti(int *val){
   // read poti value
   *val = analogRead(A1);
+  // Serial.println(*val); // uncomment for ADC_MIN, ADC_MAX determination (calibration)
 }
 void write_poti(float *val){
   // write poti value, print for test
