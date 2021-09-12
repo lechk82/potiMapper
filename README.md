@@ -11,7 +11,7 @@ Example:
 // Mapping properties
 #define GAIN_MIN 0.0f
 #define GAIN_MAX 1.0f
-#define OFFSET1 -2.0f
+#define OFFSET1 0.0f
 
 potiMapper* poti0 = new potiMapper();
 
