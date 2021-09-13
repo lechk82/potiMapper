@@ -28,7 +28,7 @@ void write_poti(float *val){
 }
 
 void setup(){
-  //init poti
+  // init poti
   poti->init(   ADC_MIN,
                 ADC_MAX,
                 GAIN_MIN,
