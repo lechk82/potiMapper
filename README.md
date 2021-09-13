@@ -23,12 +23,11 @@ void read_poti(int *val){
   // Serial.println(*val); // uncomment for ADC_MIN, ADC_MAX determination (calibration)
 }
 void write_poti(float *val){
-  // write poti value, print for test
+  // write mapped poti value, print for test
   Serial.println(*val);
 }
 
 void setup(){
-
   //init poti
   poti->init(   ADC_MIN,
                 ADC_MAX,
@@ -38,7 +37,6 @@ void setup(){
                 OFFSET,
                 &read_poti,
                 &write_poti);
-
 }
 
 void loop(){
