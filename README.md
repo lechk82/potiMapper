@@ -33,7 +33,7 @@ void setup(){
                 ADC_MAX,
                 GAIN_MIN,
                 GAIN_MAX,
-                ADC_TH,
+                ADC_THRESHOLD,
                 OFFSET,
                 &read_poti,
                 &write_poti);
