@@ -13,11 +13,11 @@ class potiMapper {
                 unsigned int in_th,
                 float out_offset,
                 void (*read_cb)(int *),
-                void (*write_cb)(float *),
+                void (*write_cb)(float *, int *),
                 bool enableFilter = true
               );
 
-    void setWrite_cb(void (*cb)(float *));
+    void setWrite_cb(void (*cb)(float *, int *));
     void setRead_cb(void (*cb)(int *));
     void setInRange(int min, int max);
     void setOutRange(float min, float max);
@@ -36,7 +36,7 @@ class potiMapper {
     float maptofloat(int x);
 
   protected:
-    void (*_write_cb)(float *);
+    void (*_write_cb)(float *, int *);
     void (*_read_cb)(int *);
     float _val_f = 0.0f;
     int _val_i = 0;
