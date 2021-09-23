@@ -22,8 +22,9 @@ void read_poti(int *val){
   *val = analogRead(A1);
   // Serial.println(*val); // uncomment for ADC_MIN, ADC_MAX determination (calibration)
 }
-void write_poti(float *val){
-  // write mapped poti value, print for test
+void write_poti(float *val, int *raw){
+  // write mapped or raw poti value, print for test
+  // Serial.println(*raw);
   Serial.println(*val);
 }
 
