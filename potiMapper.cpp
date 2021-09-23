@@ -10,7 +10,7 @@ void potiMapper::init(int in_min,
                 unsigned int in_th,
                 float out_offset,
                 void (*read_cb)(int *),
-                void (*write_cb)(float *),
+                void (*write_cb)(float *, int *),
                 bool enableFilter = true
               ){
     _in_min = in_min;
@@ -25,7 +25,7 @@ void potiMapper::init(int in_min,
     setWrite_cb(write_cb);
 }
 
-void potiMapper::setWrite_cb(void (*cb)(float *)){  _write_cb = cb; }
+void potiMapper::setWrite_cb(void (*cb)(float *, int *)){  _write_cb = cb; }
 void potiMapper::setRead_cb(void (*cb)(int *)){ _read_cb = cb; }
 void potiMapper::setInRange(int min, int max){
     _in_min = min;
@@ -63,6 +63,6 @@ int read;
     if((read > _val_i+_in_th) || (read < _val_i-_in_th)){
         _val_i = read;
         _val_f  = maptofloat(read) + _out_offset;
-        _write_cb(&_val_f);
+        _write_cb(&_val_f, &_val_i);
     }
 }
