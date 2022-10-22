@@ -11,7 +11,7 @@ void potiMapper::init(int in_min,
                 float out_offset,
                 void (*read_cb)(int *),
                 void (*write_cb)(float *, int *),
-                bool enableFilter = true
+                bool enableFilter
               ){
     _in_min = in_min;
     _in_max = in_max;
