@@ -60,7 +60,7 @@ int read;
         // 3db cutoff frequency: f = Fs/(2*pi) * acos(1 - alpha^2 / (2*(1-alpha)))
         read = (int)round(_alpha * (float)read) + ((1.0f-_alpha)*(float)_val_i);
     }
-    if((read > _val_i+_in_th) || (read < _val_i-_in_th)){
+    if((read > (_val_i+_in_th)) || (read < (_val_i-_in_th))){
         _val_i = read;
         _val_f  = maptofloat(read) + _out_offset;
         _write_cb(&_val_f, &_val_i);
